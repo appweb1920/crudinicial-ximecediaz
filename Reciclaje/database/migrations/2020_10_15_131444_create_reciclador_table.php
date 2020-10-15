@@ -14,8 +14,9 @@ class CreateRecicladorTable extends Migration
     public function up()
     {
         Schema::create('reciclador', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('nombre');
         });
     }
 
