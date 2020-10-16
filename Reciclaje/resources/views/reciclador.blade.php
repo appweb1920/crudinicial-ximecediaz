@@ -18,6 +18,8 @@
     @foreach($reciclador as $r)
         <p>{{$r->nombre}}</p>
         <p>{{$r->diasrecoleccion}}</p>
+        <a href="/editar/{{$r->id}}">Editar</a>
+        <a href="/borrar/{{$r->id}}">Borrar</a>
         <br>
     @endforeach
     @endif

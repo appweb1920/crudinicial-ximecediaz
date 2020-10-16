@@ -82,6 +82,26 @@ class RecicladorController extends Controller
         //
     }
 
+    public function MuestraEdicion($id)
+    {
+        // buscar dato
+        $reciclador = reciclador::find($id);
+        // pasar el dato a la vista
+        return view('editaDato')->with('reciclador',$reciclador);
+    }
+
+    public function guardaEdicion(Request $request)
+    {
+        $reciclador = reciclador::find($request->id);
+        if(!is_null($reciclador))
+        {
+            $reciclador->nombre = $request->nombre;
+            $reciclador->diasrecoleccion = $request->recoleccion;
+            $reciclador->save();
+        }
+        return redirect('/reciclador');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
