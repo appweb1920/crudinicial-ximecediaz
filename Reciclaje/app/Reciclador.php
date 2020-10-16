@@ -14,8 +14,11 @@ class Reciclador extends Model
 
     public function getLugar(){
 
-        $lugar = DB::select('SELECT lugar.nombre FROM lugar INNER JOIN ')
-        //return $lugar = Lugar::where('id', $this->id)->get();
+        $lugar = DB::select('SELECT lugar.nombre FROM lugar 
+        INNER JOIN relacion ON relacion.idLugar = lugar.id 
+        INNER JOIN reciclador ON relacion.idReciclador = reciclador.id 
+        WHERE reciclador.id='.$this->id);
+        return $lugar;
     }
 
 }
