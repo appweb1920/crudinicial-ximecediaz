@@ -16,9 +16,10 @@ class CreateLugarTable extends Migration
         Schema::create('lugar', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('nombre');
-            $table->string('ciudad');
+            $table->string('tipo-basura');
             $table->string('direccion');
+            $table->time('horario-apertura');
+            $table->time('horario-cierre');
         });
     }
 
