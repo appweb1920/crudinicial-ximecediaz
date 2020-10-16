@@ -17,7 +17,7 @@ class CreateRecicladorTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nombre');
-            $table->string('dias-recoleccion');
+            $table->string('diasrecoleccion');
         });
     }
 

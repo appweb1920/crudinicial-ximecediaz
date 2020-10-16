@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class Reciclador extends Model
 {
     protected $table="reciclador";
-    protected $fillable=['nombre','dias-recoleccion'];
+    protected $fillable=['nombre','diasrecoleccion'];
 
     public function getLugar(){
 
