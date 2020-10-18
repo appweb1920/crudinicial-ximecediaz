@@ -102,6 +102,10 @@ class RecicladorController extends Controller
         return redirect('/reciclador');
     }
 
+    public function agrega(Request $request){
+        return view('agrega');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {return view('welcome');});
 
 Route::get('/reciclador','RecicladorController@index');
+Route::get('/agrega','RecicladorController@agrega');
 Route::post('/add', 'RecicladorController@store');
 Route::get('/editar/{id}', 'RecicladorController@MuestraEdicion');
 Route::post('/editar/guardaEdicion', 'RecicladorController@guardaEdicion');
