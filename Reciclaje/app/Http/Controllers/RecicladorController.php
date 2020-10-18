@@ -96,7 +96,7 @@ class RecicladorController extends Controller
         if(!is_null($reciclador))
         {
             $reciclador->nombre = $request->nombre;
-            $reciclador->diasrecoleccion = $request->recoleccion;
+            $reciclador->diasrecoleccion = $request->diasrecoleccion;
             $reciclador->save();
         }
         return redirect('/reciclador');

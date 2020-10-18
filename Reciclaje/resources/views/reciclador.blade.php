@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Recolectores</h1>
+<h3>Recolectores</h3>
     <form action="/add" method="POST">
         @csrf
         <input type="text" name="nombre">
