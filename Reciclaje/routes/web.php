@@ -17,3 +17,8 @@ Route::get('/', function () {return view('welcome');});
 
 Route::get('/reciclador','RecicladorController@index');
 Route::post('/add', 'RecicladorController@store');
+Route::get('/editar/{id}', 'RecicladorController@MuestraEdicion');
+Route::post('/editar/guardaEdicion', 'RecicladorController@guardaEdicion');
+
+Route::get('/borrar/{id}', 'RecicladorController@borra');
+
