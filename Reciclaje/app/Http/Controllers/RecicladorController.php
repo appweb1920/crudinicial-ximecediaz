@@ -105,7 +105,8 @@ class RecicladorController extends Controller
     }
 
     public function agrega(Request $request){
-        return view('agrega');
+        $lugares = Lugar::all();
+        return view('agrega')->with('lugar',$lugares);
     }
 
     /**
