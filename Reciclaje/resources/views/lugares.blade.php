@@ -6,7 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-<div><h4>Lugares</h4></div>
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Sistema recolector de basura</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/reciclador">Recolectores</a></li>
+        <li><a href="/lugares">Lugares</a></li>
+      </ul>
+    </div>
+  </nav>
+<div><h3>Lugares</h3></div>
     <table class="striped, highlight">
         <thead>
             <tr>
@@ -24,14 +33,14 @@
             <tr>
                 <td>{{$lr->id}}</td>
                 <td>{{$lr->direccion}}</td>
-                <td>{{$lr->tipo-basura}}</td>
-                <td>{{$lr->horario-apertura}}</td>
-                <td>{{$lr->horario-cierre}}</td>
-                <td><a href="/editar/{{$r->id}}">
+                <td>{{$lr->tipoB}}</td>
+                <td>{{$lr->horarioA}}</td>
+                <td>{{$lr->horarioC}}</td>
+                <td><a href="/editarLugar/{{$lr->id}}">
                         <i class="small material-icons blue-text text-darken-3">mode_edit</i></a>
-                    <a href="/borrar/{{$r->id}}"><i class="small material-icons red-text text-darken-2">
+                    <a href="/borrarLugar/{{$lr->id}}"><i class="small material-icons red-text text-darken-2">
                             delete</i></a>
-                    <a href="/mirar/{{$r->id}}"><i class="small material-icons green-text text-darken-2">
+                    <a href="/mirarLugar/{{$lr->id}}"><i class="small material-icons green-text text-darken-2">
                             visibility</i></a></td>
                 
             </tr>
@@ -41,7 +50,7 @@
 
     </table>
     <div class="col s6 right" style="padding: 30px 60px 30px 30px">
-        <a class="btn-floating btn-large waves-effect waves-light red" href="/agrega">
+        <a class="btn-floating btn-large waves-effect waves-light red" href="/agregaLugar">
         <i class="material-icons">add</i></a></div>
 </body>
 </html>

@@ -14,7 +14,8 @@ class LugarController extends Controller
      */
     public function index()
     {
-        //
+        $lugares = Lugar::all();
+        return view('lugares')->with('lugar',$lugares);
     }
 
     /**
@@ -35,7 +36,13 @@ class LugarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lugar = new lugar;
+        $lugar->direccion = $request->direccion;
+        $lugar->tipoB = $request->tipoB;
+        $lugar->horarioA = $request->horarioA;
+        $lugar->horarioC = $request->horarioC;
+        $lugar->save();
+        return redirect('/lugares');
     }
 
     /**
@@ -47,6 +54,30 @@ class LugarController extends Controller
     public function show(Lugar $lugar)
     {
         //
+    }
+
+    public function MuestraEdicion($id)
+    {
+        // buscar dato
+        $lugar = Lugar::find($id);
+        // pasar el dato a la vista
+        return view('editaDato')->with('lugar',$lugar);
+    }
+
+    public function guardaEdicion(Request $request)
+    {
+        $lugar = lugar::find($request->id);
+        if(!is_null($lugar))
+        {
+            $lugar->nombre = $request->nombre;
+            $lugar->diasrecoleccion = $request->diasrecoleccion;
+            $lugar->save();
+        }
+        return redirect('/lugares');
+    }
+
+    public function agrega(Request $request){
+        return view('agregaLugar');
     }
 
     /**
@@ -78,8 +109,12 @@ class LugarController extends Controller
      * @param  \App\Lugar  $lugar
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lugar $lugar)
+    public function destroy($id)
     {
-        //
+        $lugar = Lugar::find($id);
+        //$relacion = Relacion::find($id);
+        //$relacion->delete();
+        $lugar->delete();
+        return redirect('/lugares');
     }
 }

@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script> 
+      <script>
+         $(document).ready(function() {
+            $('select').material_select();
+         });
+      </script>
 </head>
 <body>
 
@@ -13,8 +22,8 @@
         <div class="row"><div class="input-field col s6"><input placeholder="Placeholder" id="first_name" type="text" class="validate" name="nombre">
           <label for="first_name">Nombre Completo</label>
           </div></div>
-          <div class="row">
-        <div class="input-field col s12">
+              <div class="col s6"></div>
+              <label>Días de la semana</label>
         <select multiple>
       <option value="" disabled selected>Escoge los días</option>
       <option value="Lunes">Lunes</option>
@@ -24,28 +33,14 @@
       <option value="Viernes">Viernes</option>
       <option value="Sábado">Sádabo</option>
       <option value="Domingo">Domingo</option>
-    </select>
-    </div></div>
+    </select></div>
+    <div class="row">
+        <label>Centro de recolección</label>
+        
+    </div>
     <div class="row"><input type="submit"></div>
     </form>
     </div>
-    <script>
     
-    var instance = M.FormSelect.getInstance(elem);
-    instance.getSelectedValues();
-
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-  });
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('select').formSelect();
-  });
-
-  
-       </script>
 </body>
 </html>

@@ -20,6 +20,8 @@ Route::get('/agrega','RecicladorController@agrega');
 Route::post('/add', 'RecicladorController@store');
 Route::get('/editar/{id}', 'RecicladorController@MuestraEdicion');
 Route::post('/editar/guardaEdicion', 'RecicladorController@guardaEdicion');
-
+Route::get('/lugares','LugarController@index');
+Route::get('/agregaLugar','LugarController@agrega');
+Route::post('/addLugar', 'LugarController@store');
 Route::get('/borrar/{id}', 'RecicladorController@destroy');
-
+Route::get('/borrarLugar/{id}', 'LugarController@destroy');
