@@ -113,8 +113,6 @@ class LugarController extends Controller
     public function destroy($id)
     {
         $lugar = Lugar::find($id);
-        $relacion = Relacion::find($id);
-        $relacion->delete();
         $lugar->delete();
         return redirect('/lugares');
     }
