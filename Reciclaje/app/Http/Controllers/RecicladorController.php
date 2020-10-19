@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Reciclador;
 use App\Lugar;
+use App\Relacion;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class RecicladorController extends Controller
 {
@@ -114,6 +116,10 @@ class RecicladorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reciclador = Reciclador::find($id);
+        $relacion = Relacion::find($id);
+        $relacion->delete();
+        $reciclador->delete();
+        return redirect('/reciclador');
     }
 }

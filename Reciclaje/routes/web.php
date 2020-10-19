@@ -21,5 +21,5 @@ Route::post('/add', 'RecicladorController@store');
 Route::get('/editar/{id}', 'RecicladorController@MuestraEdicion');
 Route::post('/editar/guardaEdicion', 'RecicladorController@guardaEdicion');
 
-Route::get('/borrar/{id}', 'RecicladorController@borra');
+Route::get('/borrar/{id}', 'RecicladorController@destroy');
 
