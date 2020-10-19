@@ -40,8 +40,9 @@
                         <i class="small material-icons blue-text text-darken-3">mode_edit</i></a>
                     <a href="/borrarLugar/{{$lr->id}}"><i class="small material-icons red-text text-darken-2">
                             delete</i></a>
-                    <a href="/mirarLugar/{{$lr->id}}"><i class="small material-icons green-text text-darken-2">
-                            visibility</i></a></td>
+                    <!-- <a href="/mirarLugar/{{$lr->id}}"><i class="small material-icons green-text text-darken-2">
+                            visibility</i></a>-->
+                        </td> 
                 
             </tr>
             @endforeach

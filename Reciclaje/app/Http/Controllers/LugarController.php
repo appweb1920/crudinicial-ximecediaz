@@ -62,7 +62,7 @@ class LugarController extends Controller
         // buscar dato
         $lugar = Lugar::find($id);
         // pasar el dato a la vista
-        return view('editaDato')->with('lugar',$lugar);
+        return view('editaLugar')->with('lugar',$lugar);
     }
 
     public function guardaEdicion(Request $request)
@@ -70,8 +70,10 @@ class LugarController extends Controller
         $lugar = lugar::find($request->id);
         if(!is_null($lugar))
         {
-            $lugar->nombre = $request->nombre;
-            $lugar->diasrecoleccion = $request->diasrecoleccion;
+            $lugar->direccion = $request->direccion;
+            $lugar->tipoB = $request->tipoB;
+            $lugar->horarioA = $request->horarioA;
+            $lugar->horarioC = $request->horarioC;
             $lugar->save();
         }
         return redirect('/lugares');

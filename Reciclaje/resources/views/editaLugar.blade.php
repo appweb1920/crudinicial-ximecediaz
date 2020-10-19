@@ -11,8 +11,8 @@
         <input type="hidden" name="id" value="{{$lugar->id}}">
         <input type="text" name="direccion" value="{{$lugar->direccion}}">
         <input type="text" name="tipoB" value="{{$lugar->tipoB}}">
-        <input type="text" name="horarioA" value="{{$lugar->horarioA}}">
-        <input type="text" name="horarioC" value="{{$lugar->horarioC}}">
+        <input type="time" name="horarioA" value="{{$lugar->horarioA}}">
+        <input type="time" name="horarioC" value="{{$lugar->horarioC}}">
         <input type="submit">
     </form>
 </body>
