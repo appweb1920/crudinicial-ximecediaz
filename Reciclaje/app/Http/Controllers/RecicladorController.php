@@ -43,7 +43,12 @@ class RecicladorController extends Controller
         $reciclador = new reciclador;
         $reciclador->nombre = $request->nombre;
         $reciclador->diasrecoleccion = $request->diasrecoleccion;
+        $relacion = new relacion;
         $reciclador->save();
+        $relacion->idLugar = $request->idLugar;
+        $relacion->idReciclador = $reciclador->id;
+        $relacion->save();
+        
         return redirect('/reciclador');
     }
 

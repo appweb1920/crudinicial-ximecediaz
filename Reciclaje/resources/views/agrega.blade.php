@@ -27,7 +27,7 @@
             </div>
             <div class="col s6"></div>
             <label>Días de la semana</label>
-            <select multiple>
+            <select multiple name="diasrecoleccion">
                 <option value="" disabled selected>Escoge los días</option>
                 <option value="Lunes">Lunes</option>
                 <option value="Martes">Martes</option>
@@ -37,20 +37,18 @@
                 <option value="Sábado">Sádabo</option>
                 <option value="Domingo">Domingo</option>
             </select>
-    </div>
-    <div class="row">
-        <label>Centro de recolección</label>
 
+            <div class="row">
+                <label>Centro de recolección</label>
+                <select name="idLugar">
+                    @if(!is_null($lugar))@foreach($lugar as $lr)<option value="{{$lr->id}}">{{$lr->direccion}}</option>
+                    @endforeach
+                    @endif
+                </select>
 
-        <select>
-            @if(!is_null($lugar))@foreach($lugar as $lr)<option value="{{$lr->id}}">{{$lr->direccion}}</option>
-            @endforeach
-            @endif
-        </select>
-
-    </div>
-    <div class="row"><input type="submit"></div>
-    </form>
+            </div>
+            <div class="row"><input type="submit"></div>
+        </form>
     </div>
 
 </body>

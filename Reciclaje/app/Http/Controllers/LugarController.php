@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Lugar;
+use App\Relacion;
 use Illuminate\Http\Request;
 
 class LugarController extends Controller
@@ -112,8 +113,8 @@ class LugarController extends Controller
     public function destroy($id)
     {
         $lugar = Lugar::find($id);
-        //$relacion = Relacion::find($id);
-        //$relacion->delete();
+        $relacion = Relacion::find($id);
+        $relacion->delete();
         $lugar->delete();
         return redirect('/lugares');
     }
