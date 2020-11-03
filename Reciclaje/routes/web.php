@@ -29,3 +29,7 @@ Route::get('/agregaLugar','LugarController@agrega');
 Route::post('/addLugar', 'LugarController@store');
 Route::get('/borrar/{id}', 'RecicladorController@destroy');
 Route::get('/borrarLugar/{id}', 'LugarController@destroy');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
